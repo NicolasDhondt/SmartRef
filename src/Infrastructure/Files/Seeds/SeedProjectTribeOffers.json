@@ -1,0 +1,18 @@
+[
+  {
+    "ProjectId": 1,
+    "TribeOfferId": 1
+  },
+  {
+    "ProjectId": 1,
+    "TribeOfferId": 2
+  },
+  {
+    "ProjectId": 2,
+    "TribeOfferId": 3
+  },
+  {
+    "ProjectId": 3,
+    "TribeOfferId": 5
+  }
+]

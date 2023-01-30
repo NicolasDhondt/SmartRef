@@ -1,0 +1,98 @@
+[
+  {
+    "Name": "Energy",
+    "VerticalId": 1
+  },
+  {
+    "Name": "Materials",
+    "VerticalId": 2
+  },
+  {
+    "Name": "Capital Goods",
+    "VerticalId": 3
+  },
+  {
+    "Name": "Commercial & Professional Services",
+    "VerticalId": 3
+  },
+  {
+    "Name": "Transportation",
+    "VerticalId": 3
+  },
+  {
+    "Name": "Automobiles & Components",
+    "VerticalId": 4
+  },
+  {
+    "Name": "Consumer Durables & Apparel",
+    "VerticalId": 4
+  },
+  {
+    "Name": "Consumer Services",
+    "VerticalId": 4
+  },
+  {
+    "Name": "Retailing",
+    "VerticalId": 4
+  },
+  {
+    "Name": "Food & Staples Retailing",
+    "VerticalId": 5
+  },
+  {
+    "Name": "Food, Beverage & Tobacco",
+    "VerticalId": 5
+  },
+  {
+    "Name": "Household & Personal Products",
+    "VerticalId": 5
+  },
+  {
+    "Name": "Health Care Equipment & Services",
+    "VerticalId": 6
+  },
+  {
+    "Name": "Pharmaceuticals, Biotechnology & Life Sciences",
+    "VerticalId": 6
+  },
+  {
+    "Name": "Banks",
+    "VerticalId": 7
+  },
+  {
+    "Name": "Diversified Financials",
+    "VerticalId": 7
+  },
+  {
+    "Name": "Insurance",
+    "VerticalId": 7
+  },
+  {
+    "Name": "Software & Services",
+    "VerticalId": 8
+  },
+  {
+    "Name": "Technology Hardware & Equipment",
+    "VerticalId": 8
+  },
+  {
+    "Name": "Semiconductors & Semiconductor Equipment",
+    "VerticalId": 8
+  },
+  {
+    "Name": "Telecommunication Services",
+    "VerticalId": 9
+  },
+  {
+    "Name": "Media & Entertainment",
+    "VerticalId": 9
+  },
+  {
+    "Name": "Utilities",
+    "VerticalId": 10
+  },
+  {
+    "Name": "Real Estate",
+    "VerticalId": 11
+  }
+]

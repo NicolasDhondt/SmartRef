@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <div class="container">
+    <ul class="navbar-nav">
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link" [routerLink]="['/']">
+          <img src="../../assets/images/B&D.png" alt="logo B&D">
+        </a>
+      </li>
+      <b>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/builder']" [routerLinkActive]="['link-active']">
+              BUILDER
+              <br>
+            <i class="bi bi-tools" style="font-size: 2rem;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/finder']" [routerLinkActive]="['link-active']">
+            FINDER
+            <br>
+            <i class="bi bi-search" style="font-size: 2rem;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dashboard']" [routerLinkActive]="['link-active']">
+            DASHBORD
+            <br>
+            <i class="bi bi-bar-chart-line" style="font-size: 2rem;"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dataquality']" [routerLinkActive]="['link-active']">
+            DATA QUALITY
+            <br>
+            <i class="bi bi-patch-check" style="font-size: 2rem;"></i>
+          </a>
+        </li>
+      </b>
+    </ul>
+  </div>
+</nav>

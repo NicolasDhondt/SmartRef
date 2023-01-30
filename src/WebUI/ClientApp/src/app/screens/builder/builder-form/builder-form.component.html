@@ -1,0 +1,324 @@
+<form [formGroup]="projectForm" (ngSubmit)="projectForm.valid && saveProject()" 
+autocomplete="off" class="builder">
+    <div class="header">
+        <ul>
+            <li *ngIf="isFirstPart()|| isSecondPart() || isThirdPart() || isLastPart()" [ngClass]="'current'">
+                <strong>Customer</strong>
+            </li>
+            <li *ngIf="isSecondPart() || isThirdPart() || isLastPart()" [ngClass]="'current'">
+                <strong>Project</strong>
+            </li>
+            <li *ngIf="isFirstPart()">
+                <strong>Project</strong>
+            </li>
+            <li *ngIf="isThirdPart() || isLastPart()" [ngClass]="'current'">
+                <strong>References</strong>
+            </li>
+            <li *ngIf="isFirstPart() || isSecondPart()">
+                <strong>References</strong>
+            </li>
+            <li *ngIf="isLastPart()" [ngClass]="'current'">
+                <strong>Governance</strong>
+            </li>
+            <li *ngIf="isFirstPart() || isSecondPart() || isThirdPart()">
+                <strong>Governance</strong>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div *ngIf="isFirstPart()">
+            <div class="global-first">
+                <div class="item">
+                    <p><strong>Vertical</strong></p>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" 
+                    formControlName="verticalId"
+                    #selectVertical (change)="loadSectors(selectVertical.value)">
+                        <option *ngFor="let vertical of verticals" [value]="vertical.id">
+                            {{vertical.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="item">
+                    <p><strong>Sector</strong></p>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                    formControlName="sectorId"
+                    #selectSector (change)="loadCustomers(selectSector.value)">
+                        <option *ngFor="let sector of sectors" [value]="sector.id">
+                            {{sector.name}}
+                        </option>
+                    </select>
+                </div>
+                <div class="item">
+                    <p><strong>Compagny</strong></p>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                    formControlName="customerId">
+                        <option *ngFor="let customer of customers" [value]="customer.id">
+                            {{customer.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>            
+        </div>
+        <div *ngIf="isSecondPart()" >
+            <div class="global-second">
+                <div class="leftPart">
+                    <div class="item-h-left">
+                        <p><strong>Project Subject</strong></p>
+                        <input type="text" class="form-control" id="name-input" 
+                        placeholder="The entire name..."
+                        formControlName="name">
+                        <div class="error-field-message" 
+                        *ngIf="projectForm.controls['name'].errors?.isEmpty">
+                            The name need to be completed with no white space as first character
+                        </div>
+                    </div>
+                    <div class="item-v-country">
+                        <div class="item-h-left-country">
+                            <p><strong>Country</strong></p>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="country-select"
+                            #selectCountry (change)="addCountry(selectCountry.value)">
+                                <option *ngFor="let country of countries" [value]="country.id">
+                                    {{country.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="item-h-left-country">
+                            <button 
+                            *ngFor="let country of countriesSelectedToPrint" [value]="country.id"
+                            (click)="removeCountry(country.id)"
+                            class="buttonCountry"
+                            type="button">
+                                {{country.initial}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-h-left">
+                        <p><strong>Year Of Delivery</strong></p>
+                        <input type="year" class="form-control" [min]="1950" [max]="2150" [value]="2150" 
+                        id="year-input"
+                        formControlName="endYear">
+                        <div class="error-field-message" 
+                        *ngIf="projectForm.controls['endYear'].errors?.min">
+                            The year of delivery is more or equals than 1950
+                        </div>
+                        <div class="error-field-message" 
+                        *ngIf="projectForm.controls['endYear'].errors?.max">
+                            The year of delivery is less or equals than 2150. Please enter 2150 as default
+                        </div>
+                    </div>
+                    <div class="item-v">
+                        <p><strong>Project Status</strong></p>
+                        <div class="myToggle">
+                            <label class="form-check-label" for="flexSwitchCheckDefault" id="onGoingLabel">On Going</label>
+                            <div class="form-check form-switch">
+                                <input
+                                mdbCheckbox
+                                class="form-check-input"
+                                type="checkbox"
+                                id="flexSwitchCheckDefault"
+                                formControlName="isFinished"/>
+                            </div>
+                            <label class="form-check-label" for="flexSwitchCheckDefault" id="finishedLabel">Finished</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightPart">
+                    <div class="item-v">
+                        <p><strong>Data / Digital</strong></p>
+                        <div class="item-h-right">
+                            <button 
+                            *ngFor="let targetWork of targetsWork" [value]="targetWork.id"
+                            (click)="newTargetWork(targetWork.id)"
+                            [ngClass]="{'buttonNotClicked': !targetsWorkIds.includes(targetWork.id), 
+                            'buttonClicked' : targetsWorkIds.includes(targetWork.id)}"
+                            type="button">
+                                {{targetWork.name}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-v">
+                        <p><strong>Project Type</strong></p>
+                        <div class="item-h-right">
+                            <button 
+                            *ngFor="let tag of tags" [value]="tag.id"
+                            (click)="newTag(tag.id)"
+                            [ngClass]="{'buttonNotClicked': !tagsIds.includes(tag.id), 
+                            'buttonClicked' : tagsIds.includes(tag.id)}"
+                            type="button">
+                                {{tag.name}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-v">
+                        <p><strong>Offer</strong></p>
+                        <div class="item-h-right">
+                            <button 
+                            *ngFor="let offer of offers" [value]="offer.id"
+                            (click)="newOffer(offer.id)"
+                            [ngClass]="{'buttonNotClicked': !offersIds.includes(offer.id), 
+                            'buttonClicked' : offersIds.includes(offer.id)}"
+                            type="button">
+                                {{offer.name}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-h-right">
+                        <p><strong>Price</strong></p>
+                        <input class="form-control" type="number" [min]="0" placeholder="The price..."
+                        id="price-input"
+                        formControlName="price">
+                        <p>€</p>
+                        <div class="error-field-message" 
+                        *ngIf="projectForm.controls['price'].errors?.min">
+                            Enter the current price, more or equals than 0 (by default)
+                        </div>
+                    </div>
+                    <div class="item-h-right">
+                        <p><strong>Man / Days</strong></p>
+                        <input type="number" class="form-control" [min]="1" [max]="2000" placeholder="The man days..."
+                        id="man-day-input"
+                        formControlName="manDay">
+                        <p>MD</p>
+                        <div class="error-field-message" 
+                        *ngIf="projectForm.controls['manDay'].errors?.min">
+                            Enter the current MD, more or equals than 0 (by default)
+                        </div>
+                        <div class="error-field-message" 
+                        *ngIf="projectForm.controls['manDay'].errors?.max">
+                            Enter the current MD, less or equals than 2000
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div *ngIf="isThirdPart()">
+            <div class="global-third">
+                <div class="leftPart">
+                    <div class="form-outline">
+                        <label class="form-label" for="issues"><strong>Issues / Challenges</strong></label>
+                        <textarea class="form-control" id="issues" formControlName="issues" rows="3"></textarea>
+                    </div>
+                    <div class="form-outline">
+                        <label class="form-label" for="solutions"><strong>Solutions</strong></label>
+                        <textarea class="form-control" id="solutions" formControlName="solutions" rows="4"></textarea>
+                    </div>
+                    <div class="item-v-technology">
+                        <div class="item-h-left-technology">
+                            <p><strong>Technology</strong></p>
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="technology-select"
+                            #selectTechnology (change)="addTechnology(selectTechnology.value)">
+                                <option *ngFor="let technology of technologies" [value]="technology.id">
+                                    {{technology.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="rigthPart">
+                    <div class="form-outline">
+                        <label class="form-label" for="benefits"><strong>Benefits</strong></label>
+                        <textarea class="form-control" id="benefits" formControlName="benefits" rows="3"></textarea>
+                    </div>
+                    <div class="form-outline">
+                        <label class="form-label" for="narative"><strong>Narative</strong></label>
+                        <textarea class="form-control" id="narative" formControlName="narative" rows="4"></textarea>
+                    </div>
+                    <div class="item-v-technology">
+                        <div>
+                            <button 
+                            *ngFor="let technology of technologiesSelectedToPrint" [value]="technology.id"
+                            (click)="removeTechnology(technology.id)"
+                            class="buttonTechnology"
+                            type="button">
+                                {{technology.name}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isLastPart()">
+            <div class="global-last">
+                <div class="visibility-content">
+                    <p><strong>Public / Private</strong></p>
+                    <div class="myToggle">
+                        <label class="form-check-label" for="visibility" id="privateVisibility">Private</label>
+                        <div class="form-check form-switch">
+                            <input
+                            mdbCheckbox
+                            class="form-check-input"
+                            type="checkbox"
+                            id="visibility"
+                            formControlName="isPublic"/>
+                        </div>
+                        <label class="form-check-label" for="visibility" id="publicVisibility">Public</label>
+                    </div>
+                </div>
+                <div class="contacts-sales-content">
+                    <div class="item-h-contacts">
+                        <p><strong>B&D Sales Contacts</strong></p>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="contact-select-sales"
+                        #selectContactSales (change)="addContact(selectContactSales.value, 0)">
+                            <option *ngFor="let contact of contactsSales" [value]="contact.id">
+                                {{contact.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="item-h-contacts">
+                        <button 
+                        *ngFor="let contact of contactsSalesSelectedToPrint" [value]="contact.id"
+                        (click)="removeContact(contact.id, 0)"
+                        class="buttonContact"
+                        type="button">
+                            {{contact.name}}
+                        </button>
+                    </div>
+                </div>
+                <div class="contacts-delivery-content">
+                    <div class="item-h-contacts">
+                        <p><strong>B&D Delivery Contacts</strong></p>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="contact-select-delivery"
+                        #selectContactDelivery (change)="addContact(selectContactDelivery.value, 1)">
+                            <option *ngFor="let contact of contactsDelivery" [value]="contact.id">
+                                {{contact.name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="item-h-contacts">
+                        <button 
+                        *ngFor="let contact of contactsDeliverySelectedToPrint" [value]="contact.id"
+                        (click)="removeContact(contact.id, 1)"
+                        class="buttonContact"
+                        type="button">
+                            {{contact.name}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button [disabled]="isFirstPart()" (click)="previousPart()" class="button-footer" type="button">
+            <i class="bi bi-arrow-left"></i> Prev.
+        </button>
+        <div class="progessWithText">
+            <p>{{timeLeft}} minutes left</p>
+            <ngb-progressbar [showValue]="true" type="primary" [value]="currentProcess"></ngb-progressbar>
+        </div>
+        <button 
+        type="button"
+        [disabled]="!canGoNext()"
+        [hidden]="isLastPart()" 
+        class="button-footer"
+        (click)="nextPart()">
+            Next <i class="bi bi-arrow-right"></i>
+        </button>
+        <button 
+        [hidden]="!isLastPart()" 
+        [disabled]="!projectForm.valid"
+        type="submit"
+        class="button-footer">
+            Save <i class="bi bi-file-earmark-post"></i>
+        </button>
+    </div>
+</form>

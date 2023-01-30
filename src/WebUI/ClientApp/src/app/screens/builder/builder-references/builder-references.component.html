@@ -1,0 +1,8 @@
+<div class="global">
+    <app-nav-menu></app-nav-menu>
+    <div class="mainContent">
+        <h1>References Builder</h1>
+        <app-builder-form #projectFormComponent *ngIf="projectId === 0" (projectId)="formCompleted($event)"></app-builder-form>
+        <app-builder-end *ngIf="projectId !== 0" [projectId]="projectId"></app-builder-end>
+    </div>    
+</div>

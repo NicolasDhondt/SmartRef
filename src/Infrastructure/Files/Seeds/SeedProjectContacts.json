@@ -1,0 +1,27 @@
+[
+  {
+    "ProjectId": 1,
+    "ContactId": 1,
+    "ContactType": 0
+  },
+  {
+    "ProjectId": 1,
+    "ContactId": 1,
+    "ContactType": 1
+  },
+  {
+    "ProjectId": 1,
+    "ContactId": 2,
+    "ContactType": 1
+  },
+  {
+    "ProjectId": 2,
+    "ContactId": 1,
+    "ContactType": 1
+  },
+  {
+    "ProjectId": 3,
+    "ContactId": 1,
+    "ContactType": 0
+  }
+]

@@ -1,0 +1,44 @@
+﻿[
+  {
+    "Name": "AXA - FIRST PROJECT",
+    "EndDate": "2023-10-10T12:00:00.000Z",
+    "IsFinished": false,
+    "Price": 420000,
+    "ManDay": 220,
+    "Solutions": "it is a solution",
+    "Issues": "it is an issue",
+    "Benefits": "it is a banefit",
+    "Narative": "it is a narative",
+    "IsPublic": true,
+    "PhotoUrl": "it is a link to the project photo",
+    "CustomerId": 1
+  },
+  {
+    "Name": "BELFIUS - FIRST PROJECT",
+    "EndDate": "2026-10-10T12:00:00.000Z",
+    "IsFinished": true,
+    "Price": 450000,
+    "ManDay": 250,
+    "Solutions": "it is a solution 2",
+    "Issues": "it is an issue 2",
+    "Benefits": "it is a banefit 2",
+    "Narative": "it is a narative 2",
+    "IsPublic": true,
+    "PhotoUrl": "it is a link to the project photo",
+    "CustomerId": 2
+  },
+  {
+    "Name": "AXA - SECOND PROJECT",
+    "EndDate": "2025-10-10T12:00:00.000Z",
+    "IsFinished": false,
+    "Price": 500000,
+    "ManDay": 260,
+    "Solutions": "it is a solution 3",
+    "Issues": "it is an issue 3",
+    "Benefits": "it is a banefit 3",
+    "Narative": "it is a narative 3",
+    "IsPublic": true,
+    "PhotoUrl": "it is a link to the project photo",
+    "CustomerId": 3
+  }
+]

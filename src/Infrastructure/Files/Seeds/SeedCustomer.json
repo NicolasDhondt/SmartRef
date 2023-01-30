@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "AXA",
+    "PhotoUrl": "SimpleURL",
+    "VerticalId": 1,
+    "SectorId": 1
+  },
+  {
+    "Name": "BELFIUS",
+    "PhotoUrl": "SimpleURL",
+    "VerticalId": 1,
+    "SectorId": 1
+  },
+  {
+    "Name": "AXA",
+    "PhotoUrl": "SimpleURL",
+    "VerticalId": 1,
+    "SectorId": 2
+  }
+]

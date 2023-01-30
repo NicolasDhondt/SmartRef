@@ -1,0 +1,102 @@
+<div class="all-filters">
+    <div class="B-F">
+        <p><strong>Business / Functional</strong></p>
+        <div class="pack-filter">        
+            <label for="vertical">Vertical</label>
+            <select id="vertical" name="vertical" #selectVertical (change)="verticalChange(selectVertical.value)">
+                <option value="">
+                    -----
+                </option>
+                <option *ngFor="let vertical of verticals" [value]="vertical.id">
+                    {{vertical.name}}
+                </option>
+            </select>
+        </div>
+        <div class="pack-filter">        
+            <label for="sector">Sector</label>
+            <select id="sector" name="sector" #selectSector (change)="sectorChange(selectSector.value)">
+                <option value="">
+                    -----
+                </option>
+                <option *ngFor="let sector of sectors" [value]="sector.id">
+                    {{sector.name}}
+                </option>
+            </select>
+        </div>
+        <div class="pack-filter">        
+            <label for="company">Company</label>
+            <select id="company" name="company" #selectCustomer (change)="customerChange(selectCustomer.value)">
+                <option value="">
+                    -----
+                </option>
+                <option *ngFor="let customer of customers" [value]="customer.id">
+                    {{customer.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="project-info">
+        <p><strong>Project informations</strong></p>
+        <div class="pack-filter">        
+            <label for="target">Data/Digital</label>
+            <select id="target" name="target" #selectTarget (change)="targetChange(selectTarget.value)">
+                <option value="">
+                    -----
+                </option>
+                <option *ngFor="let targetWork of targetsWork" [value]="targetWork.id">
+                    {{targetWork.name}}
+                </option>
+            </select>
+        </div>
+        <div class="pack-filter">        
+            <label for="offer">Offer</label>
+            <select id="offer" name="offer" #selectOffer (change)="offerChange(selectOffer.value)">
+                <option value="">
+                    -----
+                </option>
+                <option *ngFor="let offer of offers" [value]="offer.id">
+                    {{offer.name}}
+                </option>
+            </select>
+        </div>
+        <div class="pack-filter">        
+            <label for="techno">Technology</label>
+            <select id="techno" name="techno" #selectTechnology (change)="technologyChange(selectTechnology.value)">
+                <option value="">
+                    -----
+                </option>
+                <option *ngFor="let technology of technologies" [value]="technology.id">
+                    {{technology.name}}
+                </option>
+            </select>
+        </div>
+        <div class="pack-filter">        
+            <label for="countries">Country</label>
+            <select id="countries" name="countries" #selectCountry (change)="countryChange(selectCountry.value)">
+                <option value="">
+                    -----
+                </option>
+                <option *ngFor="let country of countries" [value]="country.id">
+                    {{country.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="governance">
+        <p><strong>Governance</strong></p>
+        <div class="pack-filter-governance">        
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="privateChecked" checked (click)="privateChange()">
+                <label class="form-check-label" for="privateChecked">
+                  Private
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="publicChecked" checked (click)="publicChange()">
+                <label class="form-check-label" for="publicChecked">
+                  Public
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

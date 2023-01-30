@@ -1,0 +1,18 @@
+[
+  {
+    "ProjectId": 1,
+    "TagId": 1
+  },
+  {
+    "ProjectId": 1,
+    "TagId": 2
+  },
+  {
+    "ProjectId": 2,
+    "TagId": 4
+  },
+  {
+    "ProjectId": 3,
+    "TagId": 5
+  }
+]

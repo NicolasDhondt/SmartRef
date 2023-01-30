@@ -1,0 +1,38 @@
+.global {
+  color: white;
+  background-color:rgb(22, 22, 63);
+  height: 100%;
+  text-align: center;
+}
+
+img {
+  background-color: white;
+  padding: 2%;
+  border-radius: 1.5em;
+  width: 20%;
+  margin-top: 6%;
+}
+
+.texts{
+  margin-top: 4%;
+}
+
+h1 {
+  margin: 1.5%;
+}
+
+.tableDiv{
+  margin-top: 4%;
+}
+
+table{
+  display: inline;
+}
+
+th, td{
+  width: 20%;
+}
+
+button {
+  width: 90%;
+}

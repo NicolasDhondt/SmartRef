@@ -1,0 +1,63 @@
+<div class="global">
+    <app-nav-menu></app-nav-menu>
+    <div class="mainContent">
+        <h1>References Finder</h1>
+        <div class="projects-filters">
+            <div class="header">
+                <div class="input-group">
+                    <div id="search-autocomplete" class="form-outline">
+                      <input type="search" class="form-control" 
+                        [(ngModel)]="searchText"  
+                        (input)="loadProjectsPaginated(page)" 
+                        placeholder="Search customer containing..."/>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="filters">
+                    <app-filters 
+                        (verticalId)="verticalFilterChange($event)"
+                        (sectorId)="sectorFilterChange($event)"
+                        (customerId)="customerFilterChange($event)"
+                        (offerId)="offerFilterChange($event)"
+                        (technologyId)="technologyFilterChange($event)"
+                        (targetId)="targetFilterChange($event)"
+                        (countryId)="countryFilterChange($event)"
+                        (isPrivate)="privateFilterChange($event)"
+                        (isPublic)="publicFilterChange($event)">
+                    </app-filters>
+                </div>
+                <div class="projects">
+                    <div class="project-scroll"> 
+                        <ngx-skeleton-loader 
+                            class="skeleton"
+                            count="16"
+                            appearance="circle" 
+                            *ngIf="!isLoaded"
+                            [theme]="{
+                                width: '20%',
+                                height: '40vh',
+                                'border-radius': '2%'
+                            }">
+                        </ngx-skeleton-loader>
+                        <div class="project-card" *ngFor="let project of paginatedListOfProjectDTO?.items" >
+                            <app-project-card *ngIf="isLoaded" [project]="project"></app-project-card>
+                        </div>
+                        <p *ngIf="paginatedListOfProjectDTO?.items.length == 0" class="no-reference-found">
+                            No references corresponding to these filters. <br> Let's try another!
+                        </p>
+                    </div>
+                    <div class="pagination">
+                        <ngb-pagination 
+                            [collectionSize]="totalCount"
+                            [pageSize]="PAGE_SIZE"
+                            [(page)]="page"
+                            (pageChange)="loadProjectsPaginated(page)"
+                            [boundaryLinks]="true">
+                        </ngb-pagination>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

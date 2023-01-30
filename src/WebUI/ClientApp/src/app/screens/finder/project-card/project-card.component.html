@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-img-wrapper">
+    <img class="card-img-top" 
+    [src]="project?.photoUrl || '../../../assets/images/not_found_infos/ImageNotFound.png'" 
+    alt="The project image">
+    <button class="btn btn-primary animate dl-icons" (click)="downloadReference(project.id)">
+      <i class="bi bi-download"></i>
+    </button>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{project?.customer?.name | uppercase}}</h5>
+    <p class="card-text">{{project?.name}}</p>
+  </div>
+</div>

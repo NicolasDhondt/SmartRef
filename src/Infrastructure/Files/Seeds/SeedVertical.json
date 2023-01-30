@@ -1,0 +1,35 @@
+[
+  {
+    "Name": "Energy"
+  },
+  {
+    "Name": "Materials"
+  },
+  {
+    "Name": "Industrials"
+  },
+  {
+    "Name": "Consumer Discretionary"
+  },
+  {
+    "Name": "Consumer Staples"
+  },
+  {
+    "Name": "Health Care"
+  },
+  {
+    "Name": "Financials"
+  },
+  {
+    "Name": "Information Technology"
+  },
+  {
+    "Name": "Communication Services"
+  },
+  {
+    "Name": "Utilities"
+  },
+  {
+    "Name": "Real Estate"
+  }
+]

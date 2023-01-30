@@ -1,0 +1,51 @@
+.global{
+  display: grid;
+  grid-template-areas: 'nav-content main-content';
+  grid-template-columns: 1fr 9fr;
+  height: 100%;
+}
+
+app-nav-menu{
+  grid-area: nav-content;
+  background-color:rgb(22, 22, 63);
+  border-top-right-radius: 2.5em;
+  border-bottom-right-radius: 2.5em;
+}
+
+.mainContent{
+  grid-area: main-content;
+}
+
+h1{
+  background-color: white;
+  color: black;
+  padding: 1%;
+  padding-left: 5%;
+  margin-right: 5%;
+  margin-top: 1.5%;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-shadow: 2px 1px 1px rgb(22, 22, 63);
+}
+
+.tochange{
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: 4fr 2fr 3fr;
+  background-color: white;
+  color: black;
+  margin: 2%;
+  margin-top: 1.5%;
+  margin-right: 5%;
+  height: 80%;
+  padding: 2%;
+  padding-top: 0.5%;
+  padding-bottom: 0%;
+  border-radius: 2em;
+  box-shadow: 2px 1px 1px rgb(22, 22, 63);
+  font-size: large;
+  text-align: center;
+}

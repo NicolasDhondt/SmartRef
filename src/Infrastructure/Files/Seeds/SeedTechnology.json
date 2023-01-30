@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "AWS"
+  },
+  {
+    "Name": "SNOWFLAKE"
+  },
+  {
+    "Name": "DBT"
+  },
+  {
+    "Name": "AIRFLOW"
+  }
+]

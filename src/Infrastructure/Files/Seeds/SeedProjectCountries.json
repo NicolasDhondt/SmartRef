@@ -1,0 +1,18 @@
+[
+  {
+    "ProjectId": 1,
+    "CountryId": 1
+  },
+  {
+    "ProjectId": 1,
+    "CountryId": 2
+  },
+  {
+    "ProjectId": 2,
+    "CountryId": 1
+  },
+  {
+    "ProjectId": 3,
+    "CountryId": 1
+  }
+]

@@ -1,0 +1,27 @@
+nav {
+  text-align: center;
+}
+
+.nav-link{
+  color: white;
+}
+
+.nav-item{
+  margin-bottom: 40%;
+}
+
+.nav-link:hover{
+  color: rgb(253, 189, 78);
+}
+
+img {
+  background-color: white;
+  padding: 15%;
+  border-radius: 1em;
+  width: 100%;
+  margin-top: 2%;  
+}
+
+.link-active{
+  color: rgb(253, 189, 78) !important;
+}

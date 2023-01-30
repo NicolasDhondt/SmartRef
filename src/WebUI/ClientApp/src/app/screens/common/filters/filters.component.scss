@@ -1,0 +1,49 @@
+.all-filters{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+p{
+    font-size: medium;
+}
+
+label, option{
+    font-size: medium;
+    float: left;
+}
+
+.B-F, .project-info, .governance{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 5%;
+
+}
+
+.pack-filter{
+    margin-bottom: 3%;
+}
+
+.pack-filter select{
+    float: right;
+    font-size: medium;
+    width: 55%;
+    text-align: center;
+    border: lightgrey 1px solid;
+    border-radius: 8px;
+}
+
+.pack-filter-governance{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pack-filter-governance div{
+    margin-left: 10%;
+    margin-right: 10%;
+}

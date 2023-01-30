@@ -1,0 +1,18 @@
+[
+  {
+    "ProjectId": 1,
+    "TechnologyId": 1
+  },
+  {
+    "ProjectId": 1,
+    "TechnologyId": 2
+  },
+  {
+    "ProjectId": 2,
+    "TechnologyId": 3
+  },
+  {
+    "ProjectId": 3,
+    "TechnologyId": 4
+  }
+]

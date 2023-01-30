@@ -1,0 +1,14 @@
+[
+  {
+    "ProjectId": 1,
+    "ChannelId": 1
+  },
+  {
+    "ProjectId": 2,
+    "ChannelId": 1
+  },
+  {
+    "ProjectId": 3,
+    "ChannelId": 1
+  }
+]
